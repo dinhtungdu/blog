@@ -2,8 +2,9 @@
   <div class="container relative flex items-center justify-between py-6" x-data="{ open: false }">
     <a href="{{homeUrl}}" title="{{blogName}}" class="text-2xl tracking-tight">Hi · I'm Tung</a>
     <button
-      @click="open = true"
+      aria-label="Menu toggle"
       class="relative z-10 flex items-center justify-center mr-2 transition-colors bg-gray-900 rounded-full animate-pulse md:hidden w-7 h-7 focus:outline-none"
+      @click="open = true"
       :class="{
         'bg-gray-900 animate-pulse': ! open,
         'bg-transparent': open,
