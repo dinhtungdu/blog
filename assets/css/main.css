@@ -4,6 +4,11 @@
 
 /* purgecss start ignore */
 
+html,
+body {
+  scroll-behavior: smooth;
+}
+
 header nav {
   a {
     @apply relative;
@@ -13,7 +18,7 @@ header nav {
     @apply absolute transition-all bg-transparent rounded-full;
     content: "";
     top: -4px;
-    right: -6px;
+    right: -8px;
     height: 6px;
     width: 6px;
   }

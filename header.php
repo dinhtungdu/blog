@@ -9,14 +9,12 @@
 <body <?php body_class(); ?>>
 	<a class="sr-only" href="#content"><?php esc_html_e( 'Skip to content' ); ?></a>
 <?php wp_body_open(); ?>
-<div id="page" class="site">
+<div id="page" class="px-4 site" x-ref="page" x-data>
 
-<?php
-render_template( 'header.twig', [
-    'blogName' => get_bloginfo( 'name' ),
-	'homeUrl' => home_url(),
-	'menuItems' => get_nav_menu_items_by_location( 'primary' ),
-] );
-?>
+	<?php render_view( 'header.twig', [
+		'blogName' => get_bloginfo( 'name' ),
+		'homeUrl' => home_url(),
+		'menuItems' => get_nav_menu_items_by_location( 'primary' ),
+	] ); ?>
 
-	<div id="content">
+	<main id="content">

@@ -1,6 +1,6 @@
 <?php
 
-function render_template( $template, $data = [] ) {
+function render_view( $template, $data = [] ) {
     $twig = Twig::init();
 
     echo $twig->render($template, $data);
