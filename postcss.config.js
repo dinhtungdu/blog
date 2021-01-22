@@ -3,6 +3,7 @@ module.exports = {
     require("postcss-import"),
     require("tailwindcss"),
     require("autoprefixer"),
+    require("postcss-nested"),
     require("postcss-preset-env"),
   ],
 };

@@ -1,0 +1,10 @@
+{% for item in menuItems %}
+  <li class="{{item.classes_string}}">
+    <a href="{{item.url}}" title="{{item.title}}">{{item.title}}</a>
+    {# {% if item.submenu %}
+        <ul>
+            {% include "partials/menu-item.twig" with {'menuItems': item.submenu} %}
+        </ul>
+    {% endif %} #}
+  </li>
+{% endfor %}

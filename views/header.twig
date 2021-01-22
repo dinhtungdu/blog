@@ -1,3 +1,26 @@
 <header>
-    <a href="{{homeUrl}}" title="{{blogName}}">Tung</a>
+  <div class="container relative flex items-center justify-between py-6" x-data="{ open: false }">
+    <a href="{{homeUrl}}" title="{{blogName}}" class="text-2xl tracking-tight">Hi · I'm Tung</a>
+    <button
+      @click="open = true"
+      class="relative z-10 flex items-center justify-center mr-2 transition-colors bg-gray-900 rounded-full animate-pulse md:hidden w-7 h-7 focus:outline-none"
+      :class="{
+        'bg-gray-900 animate-pulse': ! open,
+        'bg-transparent': open,
+      }"
+    >
+      <span
+        class="w-4 h-4 transition-all bg-white rounded-full"
+        :class="{ 'w-5 h-5 bg-green-400': open }"
+      ></span>
+    </button>
+    <nav
+      class="absolute z-0 hidden p-6 bg-gray-100 md:block right-6 top-16 md:static md:p-0 md:bg-transparent"
+      :class="{ 'hidden': ! open }"
+      @click.away="open = false">
+      <ul class="grid gap-2 text-sm font-bold text-right md:flex md:gap-8 md:font-semibold">
+        {% include "partials/menu-item.twig" with menuItems %}
+      </ul>
+    </nav>
+  </div>
 </header>
