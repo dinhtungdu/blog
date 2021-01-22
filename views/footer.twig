@@ -1,7 +1,17 @@
-<footer class="container flex justify-between py-8 font-mono text-sm border-t border-gray-400 border-dashed">
+<footer class="container flex justify-between max-w-screen-lg py-8 font-mono text-sm border-t border-gray-400 border-dashed">
   <p>
-    © {{year}} <a href="{{homeUrl}}" title="{{blogName}}">{{blogName}}</a>.
-    <a class="hidden sm:inline" href="http://wordpress.org/" title="WordPress" rel="generator">Proudly powered by WordPress.</a>
+    © {{ year }} <a href="{{ homeUrl }}" title="{{ blogName }}">
+      {{ blogName }}
+    </a>.
+    <a class="hidden sm:inline"
+      href="http://wordpress.org/"
+      title="WordPress"
+      rel="generator">
+      Proudly powered by WordPress.
+    </a>
   </p>
-  <a href="#page" @click="$refs.page.scrollIntoView();$event.preventDefault()">Up ↑</a>
+  <a href="#page"
+    x-on:click="$refs.page.scrollIntoView();$event.preventDefault()">
+    Up ↑
+  </a>
 </footer>

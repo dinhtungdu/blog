@@ -11,6 +11,9 @@ module.exports = {
       container: {
         center: true,
       },
+      boxShadow: {
+        button: "6px 6px 0px",
+      },
     },
   },
   variants: {
