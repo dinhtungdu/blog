@@ -6,12 +6,12 @@ class Twig {
     private static $twig = null;
 
     private function __construct() {
-        $uploadDir = wp_get_upload_dir();
         $loader = new \Twig\Loader\FilesystemLoader( get_template_directory() . '/views');
         self::$twig = new \Twig\Environment($loader, [
-			'cache' => $uploadDir['basedir'] . '/template-caches',
+			'cache' => get_template_directory() . '/.caches',
 			'auto_reload' => true,
 			'debug' => defined( 'WP_DEBUG' ) && WP_DEBUG,
+			'autoescape' => 'html',
 		]);
 
 		if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {

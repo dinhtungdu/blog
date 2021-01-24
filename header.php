@@ -9,7 +9,7 @@
 <body <?php body_class(); ?>>
 	<a class="sr-only" href="#content"><?php esc_html_e( 'Skip to content' ); ?></a>
 <?php wp_body_open(); ?>
-<div id="page" class="px-4 text-gray-900 site" x-ref="page" x-data>
+<div id="page" class="px-4 leading-normal text-gray-900 site" x-ref="page" x-data>
 
 	<?php render_view( 'header.twig', [
 		'blogName' => get_bloginfo( 'name' ),
