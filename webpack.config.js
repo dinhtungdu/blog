@@ -2,6 +2,7 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 
 const isProduction = process.env.NODE_ENV === "production";
 
@@ -33,6 +34,20 @@ module.exports = {
       filename: "css/[name].css",
       chunkFilename: "[id].css",
     }),
+
+    new BrowserSyncPlugin(
+      {
+        host: "localhost",
+        port: 3000,
+        proxy: "tungdu.test",
+        open: true,
+        files: ["**/*.php", "dist/js/**/*.js", "dist/css/**/*.css"],
+      },
+      {
+        injectCss: true,
+        reload: false,
+      }
+    ),
   ],
   optimization: {
     splitChunks: {

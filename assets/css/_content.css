@@ -1,4 +1,5 @@
 article {
+  --wide: 1200px;
   @apply text-sm;
 
   @screen md {
@@ -82,7 +83,10 @@ article {
   }
 
   figure {
-    @apply py-8;
+    @apply my-6;
+    @screen lg {
+      @apply my-12;
+    }
   }
 
   figcaption {
@@ -93,38 +97,41 @@ article {
     figure.alignwide img {
       max-width: initial;
       @apply relative left-1/2;
-      width: 80vw;
-      margin: 0 -40vw;
+      width: var(--wide);
+      margin-left: calc(var(--wide) / -2);
     }
   }
 
   figure.alignfull img {
     max-width: initial;
     @apply relative left-1/2 w-screen;
-    margin: 0 -50vw;
+    margin-left: -50vw;
   }
 
-  .wp-embed-aspect-16-9 .wp-block-embed__wrapper {
-    @apply relative;
-    padding-top: 56.25%;
-    iframe {
-      @apply absolute bottom-0 left-0 right-0 top-0 w-full h-full;
+  .wp-block-embed {
+    @screen lg {
+      figure.alignwide& {
+        @apply relative left-1/2;
+        width: var(--wide);
+        margin-left: calc(var(--wide) / -2);
+      }
     }
 
     figure.alignfull& {
       @apply left-1/2 w-screen;
-      margin: 0 -50vw;
-      padding-top: 56.25vw;
+      margin-left: -50vw;
     }
 
-    @screen lg {
-      figure.alignwide& {
-        @apply relative left-1/2;
-        width: 80vw;
-        margin: 0 -40vw;
-        padding-top: 45vw;
+    .wp-block-embed__wrapper {
+      @apply relative;
+
+      iframe {
+        @apply absolute bottom-0 left-0 right-0 top-0 w-full h-full;
       }
     }
+  }
+  .wp-embed-aspect-16-9 .wp-block-embed__wrapper {
+    padding-top: 56.25%;
   }
 
   mark {
