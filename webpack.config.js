@@ -10,6 +10,7 @@ module.exports = {
   entry: {
     // CSS files.
     main: "./assets/css/main.css",
+    utilities: "./assets/css/utilities.css",
   },
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -33,6 +34,18 @@ module.exports = {
       chunkFilename: "[id].css",
     }),
   ],
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        styles: {
+          name: "app",
+          test: /\.css$/,
+          chunks: "all",
+          enforce: true,
+        },
+      },
+    },
+  },
   module: {
     rules: [
       {

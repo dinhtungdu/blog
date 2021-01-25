@@ -1,11 +1,11 @@
 {% if href %}
   <a href="{{ href }}"
     title="{{ title ?? label }}"
-    class="inline-block px-4 py-3 text-sm font-semibold transition-shadow bg-green-400 hover:shadow-button">
+    class="inline-block px-4 py-3 text-sm font-semibold transition-shadow bg-primary hover:shadow-button">
     {{ label }}
   </a>
 {% else %}
-  <button class="inline-block px-4 py-3 text-sm font-semibold transition-shadow bg-green-400 hover:shadow-button">
+  <button class="inline-block px-4 py-3 text-sm font-semibold transition-shadow bg-primary hover:shadow-button">
     {{ label }}
   </button>
 {% endif %}

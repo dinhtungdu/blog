@@ -1,0 +1,39 @@
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+#content a {
+  @apply border-b border-gray-400;
+  &:hover {
+    @apply border-primary;
+  }
+}
+
+.bg-dots {
+  background-image: radial-gradient(#444 6%, transparent 0);
+  background-size: 28px 28px;
+}
+
+header nav {
+  a {
+    @apply relative;
+  }
+
+  a:before {
+    @apply absolute bg-transparent rounded-full transition-all;
+    content: "";
+    top: -4px;
+    right: -8px;
+    height: 6px;
+    width: 6px;
+  }
+
+  li:hover > a:before {
+    @apply bg-gray-400;
+  }
+
+  li.current-menu-item > a:before {
+    @apply bg-primary;
+  }
+}

@@ -1,0 +1,170 @@
+article {
+  @apply text-sm;
+
+  @screen md {
+    @apply text-base;
+  }
+
+  @screen xl {
+    @apply text-lg;
+  }
+
+  @screen 2xl {
+    /* @apply text-xl; */
+  }
+
+  p {
+    @apply mb-5 leading-relaxed;
+  }
+
+  h1 {
+    @apply mb-5 mt-12 text-3xl font-bold;
+    @screen md {
+      @apply mt-14 text-5xl;
+    }
+  }
+
+  h2 {
+    @apply mb-5 mt-11 text-2xl font-bold;
+    @screen md {
+      @apply mt-12 text-4xl;
+    }
+  }
+
+  h3 {
+    @apply mb-5 mt-10 text-xl font-bold;
+    @screen md {
+      @apply mt-11 text-2xl;
+    }
+  }
+
+  h4 {
+    @apply mb-5 mt-9 text-lg font-bold;
+    @screen md {
+      @apply mt-10 text-xl;
+    }
+  }
+
+  h5 {
+    @apply mb-4 mt-8 font-bold;
+  }
+
+  h6 {
+    @apply mb-4 mt-8 text-xs font-bold tracking-widest uppercase;
+  }
+
+  pre {
+    @apply my-8 p-2 bg-gray-200 rounded-sm;
+    @screen md {
+      @apply my-10;
+    }
+  }
+
+  code {
+    @apply px-1 bg-gray-200 rounded-sm;
+    font-size: 85%;
+  }
+
+  blockquote {
+    @apply relative my-8 pl-12 text-xl font-semibold;
+
+    &::before {
+      content: '"';
+      @apply absolute left-2 top-2 text-primary text-7xl;
+    }
+
+    @screen md {
+      @apply my-12 pl-20 text-3xl;
+      &::before {
+        @apply left-2 top-2 text-9xl;
+      }
+    }
+  }
+
+  figure {
+    @apply py-8;
+  }
+
+  figcaption {
+    @apply mt-3 text-center text-xs font-medium opacity-75;
+  }
+
+  @screen lg {
+    figure.alignwide img {
+      max-width: initial;
+      @apply relative left-1/2;
+      width: 80vw;
+      margin: 0 -40vw;
+    }
+  }
+
+  figure.alignfull img {
+    max-width: initial;
+    @apply relative left-1/2 w-screen;
+    margin: 0 -50vw;
+  }
+
+  .wp-embed-aspect-16-9 .wp-block-embed__wrapper {
+    @apply relative;
+    padding-top: 56.25%;
+    iframe {
+      @apply absolute bottom-0 left-0 right-0 top-0 w-full h-full;
+    }
+
+    figure.alignfull& {
+      @apply left-1/2 w-screen;
+      margin: 0 -50vw;
+      padding-top: 56.25vw;
+    }
+
+    @screen lg {
+      figure.alignwide& {
+        @apply relative left-1/2;
+        width: 80vw;
+        margin: 0 -40vw;
+        padding-top: 45vw;
+      }
+    }
+  }
+
+  mark {
+    @apply bg-primary;
+  }
+
+  ul,
+  ol {
+    @apply mb-10 ml-4 pl-4 list-disc;
+
+    li {
+      @apply mb-3;
+    }
+
+    ul,
+    ol {
+      font-size: 90%;
+      list-style: circle;
+      @apply ml-0 my-3 list-outside;
+    }
+  }
+
+  ol,
+  ol ol {
+    @apply list-decimal;
+  }
+
+  .wp-block-table {
+    @apply overflow-x-auto;
+    word-break: normal;
+  }
+
+  table {
+    border-spacing: 0;
+    font-size: 87.5%;
+    @apply table w-full max-w-full border-collapse;
+
+    td,
+    th {
+      @apply table-cell px-3 py-2 font-mono font-medium border-b;
+    }
+  }
+}

@@ -5,6 +5,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      colors: {
+        primary: "rgba(52, 211, 153, 1)",
+      },
       fontFamily: {
         sans: ["Spartan", ...defaultTheme.fontFamily.sans],
       },
