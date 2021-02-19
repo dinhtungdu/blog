@@ -59,3 +59,24 @@ function get_nav_menu_items_by_location( $location, $args = [] ) {
     // Return menu post objects
     return $prepared_items;
 }
+
+function get_reading_time( $post_content ) {
+	$word_count = str_word_count( strip_tags( $post_content ) );
+	$readingtime = ceil( $word_count / 200 );
+	if ( $readingtime == 1 ) {
+		$timer = ' min read';
+	} else {
+		$timer = ' mins read';
+	}
+	return $readingtime . $timer;
+}
+
+function get_post_tags( $post_id ) {
+	$tags = get_the_tags( $post_id );
+	return array_map( function( $tag ) {
+		return [
+			'title' => $tag->name,
+			'url' => get_term_link( $tag, 'post_tag' ),
+		];
+	}, $tags );
+}
