@@ -24,10 +24,6 @@ jobs:
         git config --global user.email "dinhtungdu@gmail.com"
         git config --global user.name "Tung Du"
         git remote set-url origin "https://x-access-token:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git"
-        rm -rf release/
-        git worktree prune
-        git fetch
-        git worktree add -B theme release origin/theme
         rm -rf node_modules
         rm -rf .editorconfig
         rm -rf .gitignore
@@ -41,6 +37,9 @@ jobs:
         mkdir /tmp/release
         cp -a ./ /tmp/release
         mv /tmp/release .
+        git worktree prune
+        git fetch
+        git worktree add -B theme release origin/theme
         cd release
         git add .
         git commit -m "Committing built version of $GITHUB_SHA"
