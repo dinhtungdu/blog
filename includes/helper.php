@@ -80,3 +80,17 @@ function get_post_tags( $post_id ) {
 		];
 	}, $tags );
 }
+
+function get_formatted_post_data ( $post, $loop = true ) {
+	return [
+		'title' => $post->post_title,
+		'url' => get_permalink( $post ),
+		'datetime' => get_the_time( 'U', $post ),
+		'date' => human_time_diff( get_the_time( 'U', $post ), current_time( 'U' ) ) . ' ago',
+		'readtime' => get_reading_time( apply_filters( 'the_content', get_the_content( null, false, $post ) ) ),
+		'tags' => get_post_tags( get_the_ID(), $post->ID ),
+		'thumbnail' => get_the_post_thumbnail_url( $post, $loop ? 'thumbnail' : 'post-thumbnail' ),
+		'content' => apply_filters( 'the_content', get_the_content( null, false, $post ) ),
+		'summary' => $post->post_excerpt,
+	];
+}

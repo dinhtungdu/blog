@@ -30,6 +30,8 @@ add_action( 'after_setup_theme', function() {
 	add_theme_support( 'align-wide' );
 
     register_nav_menus( [ 'primary' => esc_html__( 'Primary menu' ) ] );
+
+	add_post_type_support( 'page', 'excerpt' );
 } );
 
 add_action( 'wp_enqueue_scripts', function() {
@@ -102,3 +104,11 @@ function disable_emojis_remove_dns_prefetch($urls, $relation_type) {
 
 	return $urls;
 }
+
+add_action( 'get_the_archive_title_prefix', function( $prefix ) {
+	if ( is_category() || is_tag() ) {
+		return '';
+	}
+
+	return $prefix;
+} );

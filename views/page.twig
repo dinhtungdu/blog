@@ -1,6 +1,6 @@
 <article>
-  {{ include('partials/page-header.twig', {title}) }}
-  <div class="container my-6 sm:my-8 lg:my-16 xl:my-20 md:max-w-screen-md">
+  {{ include('partials/page-header.twig', {title, desc}) }}
+  <div class="container my-6 detail sm:my-8 lg:my-16 xl:my-20 md:max-w-screen-md">
   {{ content|raw }}
   </div>
 </article>

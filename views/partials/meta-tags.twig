@@ -1,0 +1,5 @@
+<div class="font-mono text-xs lg:ml-1">
+{% for tag in tags %}
+  <a href="{{tag.url}}" title="{{tag.title}}">#{{tag.title}}</a>
+{% endfor %}
+</div>

@@ -7,10 +7,16 @@
 <header class="relative max-w-screen-xl py-20 mx-auto mb-6 text-center">
   <div class="absolute top-0 right-0 z-0 w-full pointer-events-none bottom-10 left-1/3 max-w-3/5 {{color}}"></div>
   <div class="absolute top-0 bottom-0 right-0 z-0 w-full pointer-events-none opacity-40 bg-dots max-w-2/3"></div>
-  <h1 class="relative mb-4 text-3xl font-bold md:text-5xl lg:text-6xl xl:text-7xl">{{title}}</h1>
-  <p class="relative mx-auto font-mono md:max-w-screen-sm lg:max-w-screen-md lg:text-lg">
-    <span class="py-1 bg-primary">
-      {{desc|raw}}
-    </span>
-  </p>
+  {% if isTag %}
+    <h1 class="relative mb-4 text-3xl font-bold md:text-5xl lg:text-6xl xl:text-7xl before:content" data-content="#">{{title|raw}}</h1>
+  {% else %}
+    <h1 class="relative mb-4 text-3xl font-bold md:text-5xl lg:text-6xl xl:text-7xl">{{title|raw}}</h1>
+  {% endif %}
+  {% if desc %}
+    <p class="relative mx-auto font-mono md:max-w-screen-sm lg:max-w-screen-md lg:text-lg">
+      <span class="py-1 bg-primary">
+        {{desc|raw}}
+      </span>
+    </p>
+  {% endif %}
 </header>

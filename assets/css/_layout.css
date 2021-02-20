@@ -3,13 +3,6 @@ body {
   scroll-behavior: smooth;
 }
 
-#content a {
-  @apply border-b border-gray-400;
-  &:hover {
-    @apply border-primary;
-  }
-}
-
 .bg-dots {
   background-image: radial-gradient(#444 6%, transparent 0);
   background-size: 28px 28px;
@@ -25,8 +18,8 @@ header nav {
     content: "";
     top: -4px;
     right: -8px;
-    height: 6px;
-    width: 6px;
+    height: 4px;
+    width: 4px;
   }
 
   li:hover > a:before {

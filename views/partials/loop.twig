@@ -1,0 +1,5 @@
+<div class="container grid max-w-md my-6 gap-y-12 md:grid-cols-2 lg:gap-16 md:gap-8 sm:my-8 lg:my-16 xl:my-20 md:max-w-screen-md lg:max-w-screen-lg">
+  {% for post in posts %}
+    {{ include('partials/content.twig', post) }}
+  {% endfor %}
+</div>

@@ -1,4 +1,4 @@
-article {
+article .detail {
   --wide: 1200px;
   @apply text-sm;
 
@@ -12,6 +12,13 @@ article {
 
   @screen 2xl {
     /* @apply text-xl; */
+  }
+
+  a {
+    @apply border-b border-gray-400;
+    &:hover {
+      @apply border-primary;
+    }
   }
 
   p {
@@ -172,7 +179,7 @@ article {
 
     td,
     th {
-      @apply table-cell px-3 py-2 font-mono font-medium border-b;
+      @apply table-cell px-3 py-2 text-left font-mono font-medium border-b;
     }
   }
 }

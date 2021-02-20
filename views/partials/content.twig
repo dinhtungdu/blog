@@ -1,0 +1,16 @@
+<article class="md:border-l md:border-gray-500 md:border-dashed md:pl-3">
+  <div class="flex justify-between gap-4">
+    <div>
+      <a class="inline-block mb-4 text-2xl font-bold leading-tight border-transparent" href="{{url}}" title="{{title}}">
+        {{title}}
+      </a>
+      {{ include('partials/meta.twig', {date, datetime, readtime}) }}
+    </div>
+    <a href="{{url}}" title="{{title}}" class="relative flex-grow-0 flex-shrink-0 my-0">
+      <img src="{{thumbnail}}" alt="{{title}}" class="relative object-fill object-center w-24 h-24 lg:w-32 lg:h-32" />
+      <div class="absolute w-24 h-24 bg-yellow-500 -top-2 -left-2 lg:w-32 lg:h-32" style="z-index: -1;"></div>
+    </a>
+  </div>
+  <p class="my-4 text-xs leading-normal">{{summary|raw}}</p>
+  {{ include('partials/meta-tags.twig', {tags}) }}
+</article>
