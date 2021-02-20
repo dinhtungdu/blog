@@ -36,11 +36,11 @@ jobs:
         rm -rf .github
         mkdir /tmp/release
         cp -a ./ /tmp/release
-        mv /tmp/release .
         git worktree prune
         git fetch
         git worktree add -B theme release origin/theme
         cd release
+        mv -f /tmp/release/* .
         git add .
         git commit -m "Committing built version of $GITHUB_SHA"
         git push origin theme
