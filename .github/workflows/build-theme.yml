@@ -40,7 +40,7 @@ jobs:
         git fetch
         git worktree add -B theme release origin/theme
         cd release
-        mv -f /tmp/release/* .
+        cp -rf /tmp/release/* .
         git add .
         git commit -m "Committing built version of $GITHUB_SHA"
         git push origin theme
