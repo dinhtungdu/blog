@@ -7,8 +7,9 @@ class Twig {
 
     private function __construct() {
         $loader = new \Twig\Loader\FilesystemLoader( get_template_directory() . '/views');
+		$upload_dir = wp_upload_dir();
         self::$twig = new \Twig\Environment($loader, [
-			'cache' => get_template_directory() . '/.caches',
+			'cache' => $upload_dir['basedir'] . '/.twig-caches',
 			'auto_reload' => true,
 			'debug' => defined( 'WP_DEBUG' ) && WP_DEBUG,
 			'autoescape' => 'html',
