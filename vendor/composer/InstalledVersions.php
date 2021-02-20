@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'ceca91ced1e5fd670be7b7ff5eee09aba4a4d1bc',
+    'reference' => 'd34f877aeebca30879a34e0d3adc52bb8e8f2e84',
     'name' => '__root__',
   ),
   'versions' => 
@@ -42,7 +42,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'ceca91ced1e5fd670be7b7ff5eee09aba4a4d1bc',
+      'reference' => 'd34f877aeebca30879a34e0d3adc52bb8e8f2e84',
     ),
     'symfony/polyfill-ctype' => 
     array (
