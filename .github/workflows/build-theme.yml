@@ -27,7 +27,6 @@ jobs:
         rm -rf node_modules
         rm -rf .editorconfig
         rm -rf .gitignore
-        rm -rf .caches
         rm -rf *.config.js
         rm -rf composer.json
         rm -rf composer.lock
