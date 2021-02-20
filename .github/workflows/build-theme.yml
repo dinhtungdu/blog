@@ -26,7 +26,14 @@ jobs:
         git remote set-url origin "https://x-access-token:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git"
         rm -rf node_modules
         rm -rf .editorconfig
+        rm -rf .gitignore
+        rm -rf .caches
         rm -rf *.config.js
+        rm -rf composer.json
+        rm -rf composer.lock
+        rm -rf package.json
+        rm -rf package-lock.json
+        rm -rf .github
         git add .
         git commit -m "Committing built version of $GITHUB_SHA"
         git push origin theme
