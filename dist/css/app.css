@@ -1589,8 +1589,8 @@ article .detail table td, article .detail table th {
     position: static
   }
 
-  .md\:bottom-40 {
-    bottom: 10rem
+  .md\:bottom-20 {
+    bottom: 5rem
   }
 
   .md\:left-1\/2 {
@@ -1641,6 +1641,10 @@ article .detail table td, article .detail table th {
 
   .lg\:max-w-screen-lg {
     max-width: 1024px
+  }
+
+  .lg\:max-w-4\/5 {
+    max-width: 80%
   }
 
   .lg\:top-5 {
