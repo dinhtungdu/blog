@@ -19,6 +19,10 @@ function get_nav_menu_items_by_location( $location, $args = [] ) {
     // Get all locations
     $locations = get_nav_menu_locations();
 
+	if ( empty( $locations[ $location ] ) ) {
+		return [];
+	}
+
     // Get object id by location
     $object = wp_get_nav_menu_object( $locations[$location] );
 
@@ -73,6 +77,9 @@ function get_reading_time( $post_content ) {
 
 function get_post_tags( $post_id ) {
 	$tags = get_the_tags( $post_id );
+	if ( ! $tags ) {
+		return [];
+	}
 	return array_map( function( $tag ) {
 		return [
 			'title' => $tag->name,
