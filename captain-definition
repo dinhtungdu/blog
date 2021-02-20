@@ -3,6 +3,6 @@
   "dockerfileLines": [
     "FROM wordpress:latest",
     "RUN mkdir -p /var/www/html/wp-content/themes/blog",
-    "COPY ./ /var/www/html/wp-content/themes/blog",
+    "COPY ./ /var/www/html/wp-content/themes/blog"
   ]
  }
