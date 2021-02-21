@@ -112,3 +112,17 @@ add_action( 'get_the_archive_title_prefix', function( $prefix ) {
 
 	return $prefix;
 } );
+
+add_action( 'get_the_archive_title', function( $title ) {
+	if ( is_home() ) {
+		$blog_page_id = get_option( 'page_for_posts' );
+
+		if ( $blog_page_id ) {
+			return get_the_title( $blog_page_id );
+		} else {
+			return __( 'Blog' );
+		}
+	}
+
+	return $title;
+} );
