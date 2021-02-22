@@ -126,8 +126,3 @@ add_action( 'get_the_archive_title', function( $title ) {
 
 	return $title;
 } );
-
-add_filter( 'upload_mimes', function( $mimes ) {
-	$mimes['svg'] = 'image/svg+xml';
-	return $mimes;
-} );

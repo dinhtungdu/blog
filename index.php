@@ -18,15 +18,11 @@ global $posts;
 
 get_header();
 
-if ( have_posts() ) {
-	render_view( 'archive.twig', [
-		'title' => get_the_archive_title(),
-		'desc' => strip_tags( get_the_archive_description() ),
-		'posts' => array_map( 'get_formatted_post_data', $posts ),
-		'isTag' => is_tag(),
-	] );
-} else {
-
-}
+render_view( 'archive.twig', [
+	'title' => get_the_archive_title(),
+	'desc' => strip_tags( get_the_archive_description() ),
+	'posts' => array_map( 'get_formatted_post_data', $posts ),
+	'isTag' => is_tag(),
+] );
 
 get_footer();

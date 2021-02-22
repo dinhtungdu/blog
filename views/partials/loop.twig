@@ -2,4 +2,7 @@
   {% for post in posts %}
     {{ include('partials/content.twig', post) }}
   {% endfor %}
+  {% if posts is empty %}
+    <p class="text-xl font-bold">Nothing here, yet.</p>
+  {% endif %}
 </div>
