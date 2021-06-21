@@ -642,6 +642,8 @@ article .detail h1 {
 
       line-height: 1;
 
+      line-height: 1.25;
+
       margin-top: 3.5rem
   }
     }
@@ -659,6 +661,8 @@ article .detail h2 {
       font-size: 2.25rem;
 
       line-height: 2.5rem;
+
+      line-height: 1.375;
 
       margin-top: 3rem
   }
@@ -678,6 +682,8 @@ article .detail h3 {
 
       line-height: 2rem;
 
+      line-height: 1.5;
+
       margin-top: 2.75rem
   }
     }
@@ -695,6 +701,8 @@ article .detail h4 {
       font-size: 1.25rem;
 
       line-height: 1.75rem;
+
+      line-height: 1.5;
 
       margin-top: 2.5rem
   }
@@ -1670,6 +1678,10 @@ article .detail table td, article .detail table th {
   .xl\:text-7xl {
     font-size: 4.5rem;
     line-height: 1
+  }
+
+  .xl\:leading-tight {
+    line-height: 1.25
   }
 
   .xl\:my-20 {

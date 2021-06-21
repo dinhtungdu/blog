@@ -28,28 +28,28 @@ article .detail {
   h1 {
     @apply mb-5 mt-12 text-3xl font-bold;
     @screen md {
-      @apply mt-14 text-5xl;
+      @apply mt-14 text-5xl leading-tight;
     }
   }
 
   h2 {
     @apply mb-5 mt-11 text-2xl font-bold;
     @screen md {
-      @apply mt-12 text-4xl;
+      @apply mt-12 text-4xl leading-snug;
     }
   }
 
   h3 {
     @apply mb-5 mt-10 text-xl font-bold;
     @screen md {
-      @apply mt-11 text-2xl;
+      @apply mt-11 text-2xl leading-normal;
     }
   }
 
   h4 {
     @apply mb-5 mt-9 text-lg font-bold;
     @screen md {
-      @apply mt-10 text-xl;
+      @apply mt-10 text-xl leading-normal;
     }
   }
 
